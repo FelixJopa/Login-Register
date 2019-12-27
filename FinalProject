@@ -1,0 +1,39 @@
+# Переменные 
+login = ''
+password = ''
+user_login = ''
+user_password = ''
+choose = '2'
+
+# Старт программы
+def start_program(choose):
+    print('Выберете что вы хотите сделай')
+    choose = input('Логин 1\nРегистрация 2\n')
+    if choose == '':
+        choose = input('Логин 1\nРегистрация 2\n')
+    return choose
+
+# Запуск регистрации логина
+def register_login(user_login):
+    print('Вы выбрали регистрацию')
+    user_login = input('Введите желаемый логин: ')
+    return user_login
+
+# Запуск регистрации пароля
+def register_password(user_password):
+    user_password = input('Введите желаемый пароль: ')
+    return user_password
+
+# Запуск логина
+def login(login, password, user_login, user_password):
+    print('Залогинтесь')
+    while login != user_login:
+        login = input('Введите ваш логин: ')
+    while password != user_password:
+        password = input('Введите ваш пароль: ')
+
+
+if choose == '2':
+    user_login = register_login(user_login)
+    user_password = register_password(user_password)
+    login(login, password, user_login, user_password)
